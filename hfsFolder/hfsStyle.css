@@ -1,0 +1,237 @@
+/* headerFooterStyle.css */
+
+header {
+  position: fixed; /* Fix the header to the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure the header spans the entire width of the viewport */
+  z-index: 2; /* Set a high z-index to ensure the header appears above other content */
+}
+
+:root {
+  --header-height: 10vh; /* Default header height */
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --header-height: 10vh; /* Adjust header height for larger screens */
+  }
+}
+
+main {
+  position: relative; /* Set position to relative to allow top positioning */
+  top: var(--header-height); /* Add space for the fixed header */
+  z-index: 1; /* Ensure main content is below the header */
+  padding: 30px; /* Add padding to main content */
+}
+
+.header-top {
+  width: 100vw; /* Cover the entire width of the viewport */
+  height: var(--header-height); /* Use CSS variable for height */
+  background-image: url("./hfsImages/logoCompany.png"); /* The company name, logo, and tagline */
+  background-size: cover; /* Ensure background covers the entire area */
+  background-repeat: no-repeat; /* Prevent background from repeating */
+  background-position: center; /* Center the background image */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.header-top h1 {
+  color: #575658;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin: 0; /* Remove margin from heading */
+  transition: transform 0.15s ease-in-out, color 0.1s ease-in-out; /* Transition for animation */
+}
+
+.header-top h1:before,
+.header-top h1:after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #575658;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+header nav {
+  height: var(--header-height); /* Use CSS variable for height */
+  width: 100%; /* Ensure nav takes full width */
+  border-radius: 0px;
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 20px; /* Add padding to nav */
+  background: linear-gradient(to bottom, hsl(96, 57%, 29%), hsl(94, 45%, 35%), hsl(96, 71%, 20%)); 
+}
+
+header button {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  background-color: hsl(97, 20%, 95%);
+  color: hsl(97, 20%, 15%);
+  padding: 10px 20px;
+  margin: 1px;
+  border-radius: 10%;
+  border: none;
+  text-shadow: 0px 0px 1px black;
+  transition: transform 0.5s ease-in-out, color 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+header button:before {
+  content: '⇦';
+  margin-right: 5px;
+}
+
+header button:after {
+  content: '⇨';
+  margin-left: 5px;
+}
+
+/* Utilizing event handlers to set the className attribute of the owning element instead of using the :hover pseudo-element.  */
+header .focused-tab {
+  color: hsla(200, 100%, 40%, 1);
+  transform: scale(1.1, 1.15); /* Non-uniform scaling */
+  transition: transform 0.2s ease-in-out, color 0.2s linear;
+}
+
+header .unfocused-tab {
+  color: hsl(97, 20%, 15%);
+  transform: scale(1); /* Reset scale */
+  transition: transform 0.2s ease-in-out, color 0.2s linear;
+}
+
+
+
+
+/* a:visited{
+   color: hsla(200, 100%, 30%, 1);
+}
+ */
+
+
+
+
+
+/* Footer styles */
+
+/* .footer {
+  font-size: 13px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+} */
+
+.links-contact {
+  display: flex;
+  justify-content: space-between; /* Ensure equal spacing between elements */
+}
+
+.external-links a {
+  display: inline-flex;
+  flex-direction: right;
+  margin: 5px;
+}
+
+/* Inserting content before the element content. Needs to have its content property set, even just as an empty string.  */
+.external-links a:before {
+  content: '🌐';
+  margin-right: 5px;
+  color: hsla(200, 100%, 40%, 1);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* The use of vendor prefixes ensures compatibility with older browser versions of Firefox and WebKit-based browsers. No prefix: standard. webkit: safari and older chrome. moz: firefox. */
+/* Transition: changing property values over a given duration. The property to transition, the duration of the transition, the timing function and the delay before transition. */
+.external-links a:hover:before {
+  transform: scale(1.1);
+    color: hsla(200, 100%, 40%, 1);
+
+    transition: color 0.20s linear 0s;
+    -o-transition: color 0.20s linear 0s;
+    -ms-transition: color 0.20s linear 0s;
+    -moz-transition: color 0.20s linear 0s;
+    -webkit-transition: color 0.20s linear 0s;
+
+    transition: transform 0.20s ease-in-out 0s;
+    -o-transition: transform 0.20s ease-in-out 0s;
+    -ms-transition: transform 0.20s ease-in-out 0s;
+    -moz-transition: transform 0.20s ease-in-out 0s;
+    -webkit-transition: transform 0.20s ease-in-out 0s;
+
+    /* Non-uniform scaling by setting different factors in the X and Y directions. */
+     transform: scale(1.1, 1.9);
+     transform:translateY(2px) rotate(2deg); 
+     -o-transform:translateY(2px) rotate(2deg); 
+    -ms-transform:translateY(2px) rotate(2deg);
+    -moz-transform:translateY(2px) rotate(2deg);
+    -webkit-transform:translateY(2px) rotate(2deg);
+  }
+
+
+.contact-info {
+  display: inline-flex;
+  margin: 5px; /* Add some margin between elements */
+}
+
+.presentation {
+  display: flex;
+  flex-direction: left;
+  text-align: left;
+  width: 75%; /* Set the width of the presentation wrapper */
+  margin: auto; /* Center the wrapper horizontally */
+  padding: 5px;
+}
+
+.presentation:before,
+.presentation:after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: hsl(96, 71%, 20%);
+  margin: 20px auto;
+}
+
+/* Additional styles for content within the sidebar */
+.sidebar {
+  width: 100vw; /* Cover the entire width of the viewport */
+  height: var(--header-height); /* Use CSS variable for height */
+  background-image: url("./hfsImages/logoCompany.png"); /* The company name, logo, and tagline */
+  background-size: cover; /* Ensure background covers the entire area */
+  background-repeat: no-repeat; /* Prevent background from repeating */
+  background-position: center; /* Center the background image */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  position: fixed; /* Fixed position */
+  top: 0; /* Fixed to the top of the viewport */
+  left: 0; /* Fixed to the left-hand side */
+}
+
+.sidebar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+  z-index: -1; /* Ensure it stays behind the content */
+}
+
+
+.clock {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 1px hsla(0, 0%, 0%, 0.1);
+}

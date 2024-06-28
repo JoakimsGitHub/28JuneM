@@ -1,0 +1,10 @@
+.term {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.emoji {
+  font-size: 2em;
+  margin-right: 0.5em;
+}

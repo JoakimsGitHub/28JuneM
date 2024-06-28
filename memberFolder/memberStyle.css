@@ -1,0 +1,137 @@
+/* Base styles */
+.memberPage .memberContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  margin: 10px;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  padding: 20px;
+  font-family: var(--font-family);
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow: hidden; /* Ensure the overlay and background image are contained within the container */
+}
+
+.memberPage .memberContainer::before,
+.memberPage .memberContainer::after {
+  content: ""; /* Create a pseudo-element */
+  position: absolute; /* Position the pseudo-element */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  width: 100%; /* Cover the entire width of the container */
+  height: 100%; /* Cover the entire height of the container */
+}
+
+.memberPage .memberContainer::before {
+  background-color: var(--overlay-color); /* Semi-transparent overlay */
+  z-index: 0; /* Ensure the overlay is behind other content */
+}
+
+.memberPage .memberContainer::after {
+  background-image: url("./src/imageFolder/field.jpg"); /* Background image */
+  background-size: cover; /* Ensure background covers the entire container */
+  background-repeat: no-repeat; /* Prevent background from repeating */
+  z-index: -1; /* Ensure the background image is behind the overlay */
+}
+
+.memberPage .memberContainer img.contentImage,
+.memberPage .memberContainer p {
+  position: relative; /* Ensure elements are above the overlay and background */
+  z-index: 1; /* Ensure elements are above the overlay and background */
+}
+
+.memberPage .memberContainer img.contentImage {
+  display: block;
+  width: 100%; /* Adjust image width to 100% of its container */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 15px; /* Add margin to separate text and image */
+  max-width: 100%; /* Set maximum width for the image */
+  border-radius: 5px;
+}
+
+.memberPage .memberContainer p {
+  font-size: 1.1em;
+  color: #333; /* Darker color for better readability */
+}
+
+.memberPage .memberContainer:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transition: background 0.3s ease-in-out;
+}
+
+.memberPage .activeTab,
+.memberPage .inactiveTab,
+.checkbox{
+  position: relative; /* Ensure tabs are above the overlay */
+  z-index: 1; /* Ensure tabs are above the overlay */
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.memberPage .activeTab {
+  color: white; /* Color for active tab text */
+  background-color: var(--color-primary);
+}
+
+.memberPage .inactiveTab {
+  color: black; /* Color for inactive tabs text */
+  background-color: orangered;
+}
+
+.memberPage .activeTab:hover {
+  color: var(--color-primary);
+  background-color: white;
+}
+
+.memberPage .inactiveTab:hover {
+  color: white;
+  background-color: blue;
+}
+
+.nextButton {
+  position: relative; /* Ensure the button is positioned relative to its container */
+  z-index: 1; /* Make sure the button is above other elements, such as images */
+  margin-top: 15px; /* Add some space between the image and the button */
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nextButton:hover {
+  background-color: darkgreen;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .memberPage .memberContainer {
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch;
+    padding: 15px;
+  }
+
+  .memberPage .memberContainer img.contentImage {
+    margin-right: 0;
+    margin-bottom: 10px; /* Add margin below image for spacing */
+    width: 200px;
+  }
+
+  .memberPage .activeTab,
+  .memberPage .inactiveTab {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+

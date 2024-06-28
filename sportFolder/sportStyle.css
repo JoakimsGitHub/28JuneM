@@ -1,0 +1,76 @@
+.landing {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid columns */
+  gap: 20px; /* Gap between sport cards */
+  justify-content: center;
+}
+
+.sportCard {
+  display: grid; /* Use grid layout for sportCard */
+  grid-template-rows: auto auto 1fr auto; /* Define rows for image, headings, paragraph, and button */
+  gap: 10px; /* Gap between elements inside sportCard */
+  margin: 10px;
+  padding: 20px; /* Increased padding for better spacing */
+  text-align: center;
+  border-radius: 10px; /* Rounded corners for cards */
+  width: 100%; /* Ensure cards take full width of grid column */
+  background: linear-gradient(to bottom, #006633, #00cc66); /* Gradient background */
+}
+
+.sportCard img {
+  width: 100%;
+  max-width: 250px; /* Adjusted max-width for image */
+  height: auto;
+  border-radius: 10px; /* Rounded corners for images */
+  grid-row: 1; /* Place image in the first row */
+}
+
+.sportCard h1,
+.sportCard h2,
+.sportCard h3,
+.sportCard h4 {
+  font-family: "Libre Baskerville", sans-serif;
+  text-align: center;
+  color: #fff; /* White color for headings */
+  grid-row: 2; /* Place headings in the second row */
+}
+
+.sportCard h1 {
+  font-size: 24px; /* Increased font size for main headings */
+}
+
+.sportCard h2 {
+  font-size: 20px; /* Standard font size for secondary headings */
+}
+
+.sportCard h3 {
+  font-size: 18px; /* Standard font size for tertiary headings */
+}
+
+.sportCard h4 {
+  font-size: 16px; /* Standard font size for quaternary headings */
+}
+
+.sportCard p {
+  text-align: center;
+  color: #fff; /* White color for paragraph text */
+  font-size: 16px;
+  font-family: "Playfair", serif;
+  grid-row: 3; /* Place paragraph in the third row */
+}
+
+.sportCard button {
+  background-color: #fff; /* White background for buttons */
+  color: #006633; /* Green color for button text */
+  padding: 10px 20px; /* Increased padding for better clickability */
+  margin: 10px auto; /* Adjusted margin for better spacing */
+  border-radius: 5px; /* Rounded corners for buttons */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  grid-row: 4; /* Place button in the fourth row */
+}
+
+.sportCard button:hover {
+  background-color: #e6e6e6; /* Light grey background on hover */
+}

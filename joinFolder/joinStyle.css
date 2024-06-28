@@ -1,0 +1,133 @@
+.inputFields {
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  background-color: rgba(252, 252, 252, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+}
+
+.termsContainer {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.termsContainer p {
+  margin: 0;
+}
+
+#termsAndConditions {
+  color: blue;
+}
+
+.headingContainer {
+  align-content: center;
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgba(211, 211, 211, 0.1);
+}
+
+.headingText {
+  font-size: 45px;
+  font-weight: lighter;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  animation: typing 2s steps(30, end) forwards, cursor 1s infinite;
+}
+
+.headingText::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 1px;
+  background: #dadada;
+  right: 0;
+  top: 0;
+  animation: cursor 1s infinite;
+}
+
+.submitButton {
+  appearance: none;
+  outline: 0;
+  background-color: whitesmoke;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 15px;
+  color: #50a3a2;
+  border-radius: 4px;
+  width: 100px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@keyframes vibrate {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-1px); }
+  40% { transform: translateX(1px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
+
+.buttonAnimated {
+  animation: vibrate 0.3s linear infinite;
+}
+
+.button-class {
+  /* Define static button properties */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes cursor {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1001;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.closeModal {
+  margin-top: 20px;
+}

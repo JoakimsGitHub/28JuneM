@@ -1,0 +1,21 @@
+.home img {
+  float: left;
+  overflow: hidden;
+  margin-right: 20px; /* Add margin to separate text and image */
+}
+
+.home p {
+  text-align: center;
+  font-size: 1rem; /* Standard font size */
+  color: #333; /* Darker color for better readability */
+}
+
+.secondary-text {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

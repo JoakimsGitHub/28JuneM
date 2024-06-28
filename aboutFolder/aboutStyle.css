@@ -1,0 +1,64 @@
+/* Specific root variables for the about page */
+/* The root selector is the highest-level HTML element in the document hierarchy. */
+:root {
+  --color-redB42C33: #b42c33;
+  --color-grey1F: #1f1f1f;
+  --grad-green-004E42-green-1E2B29: linear-gradient(to bottom right, #004e42, #1e2b29);
+}
+
+/* Universally resetting box-sizing before and after all content. */
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+.whoAndWhat{
+  display: flex;
+  flex-direction: left;
+  text-align: left;
+  width: 75%; /* Set the width of the presentation wrapper */
+  margin: auto; /* Center the wrapper horizontally */
+  padding: 5px;;
+  }
+}
+
+/* Media queries for responsive font sizing */
+/* @media (max-width: 800px) {
+  body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1280px) {
+  body {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+  }
+} */
+
+/* Button animation styles */
+.buttonAnimated {
+  animation: vibrate 0.3s linear infinite;
+}
+
+.buttonStatic {
+  /* Define static button properties */
+}
+
+/* Keyframes for animations */
+@keyframes vibrate {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-1px); }
+  40% { transform: translateX(1px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
